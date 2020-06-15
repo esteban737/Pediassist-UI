@@ -1,0 +1,94 @@
+<div class="patients-container">
+	<ul class ="patient-list-container">
+		<li style="width: 100%; display: flex; margin-bottom: 30px;" *ngFor="let patient of patients.allPatientData; let i = index">
+			<div
+				style="display: flex; color: blue; width: 160px; font-size: 20px; justify-content: center; align-items: center;"
+			>
+			{{i + 1}}
+			</div>
+			<button class ="horizontal-list" (click)="selectPatient(patient.pid)">
+				<li class ="patient-item-container" *ngFor ="let getData of patientDataGetters; let i = index" [ngStyle]="{'flex': i === 0 ? .3 : 1}">
+					<p>
+						{{getData(patient)}} 
+					</p>
+				</li>
+				<div class="iconContainer">
+					<img src= "assets/icons/{{patient.avatar}}" class="icon">
+				</div>
+			</button>
+			<div
+				*ngIf="!deleteMode"
+				style="display: flex; color: blue; width: 160px; font-size: 20px; justify-content: center; align-items: center;"
+			>
+			</div>
+			<button 
+				*ngIf="deleteMode"
+				class="toolbarContainer"
+				data-toggle="modal" 
+				data-target="#deletePatientModal"
+				(click)="deletePatientPid = patient.pid"
+			>
+				<svg class="bi bi-dash-circle" width="1em" height="1em" font-size=30px viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+					<path fill-rule="evenodd" d="M3.5 8a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.5-.5z"/>
+				</svg>
+			</button>
+		</li>
+	</ul>
+</div>
+<div class="modal fade" id="deletePatientModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document" style="width: 350px">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" style="text-align: center;" id="deletePatientLabel">Are you sure you want to delete this patient?</h5>
+			</div>
+			<div class="modal-body" style="display: flex; justify-content: space-evenly;">
+				<button 
+					type="button" 
+					class="btn btn-primary"
+					data-toggle="modal" 
+					data-target="#deletePatientModal"
+					(click)="deletePatient(patient)"
+				>
+					Delete
+				</button>
+				<button 
+					type="button" 
+					class="btn btn-primary"
+					data-toggle="modal" 
+					data-target="#deletePatientModal"
+				>
+					Cancel
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal fade" id="newPatientModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="newPatientLabel">New Patient</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<form [formGroup]="newPatientForm" (ngSubmit)="patientOnSubmit(newPatientForm.value.birthdate)">
+					<div class="form-group">
+						<label for="birthdate">Want to add a new patient? We just need their birthday</label><br>
+						<input type="date" class="form-control" id="birthday" formControlName="birthdate" name="birthday">
+					</div>
+					<button 
+						type="submit" 
+						class="btn btn-primary"
+						data-toggle="modal" 
+						data-target="#newPatientModal"
+					>
+						Submit
+					</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

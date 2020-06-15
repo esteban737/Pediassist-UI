@@ -1,0 +1,69 @@
+<div style="height: 100%;">
+	<div [hidden]="!message" style="display: flex; position: absolute; width: 100%; justify-content: center; z-index: 1;">
+		<div class="alert alert-primary" style="width: 100%; display: flex; height: 60px; align-items: center;" role="alert">
+			<button class="alert-button">
+				<svg (click)="message = null" class="bi bi-x-circle-fill" width="auto" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.146-3.146a.5.5 0 0 0-.708-.708L8 7.293 4.854 4.146a.5.5 0 1 0-.708.708L7.293 8l-3.147 3.146a.5.5 0 0 0 .708.708L8 8.707l3.146 3.147a.5.5 0 0 0 .708-.708L8.707 8l3.147-3.146z"/>
+				</svg>
+			</button>
+			<div style="height: 100%; display: flex; align-items: center;">
+				{{message}}
+			</div>
+		</div>
+	</div>
+	<div style="height: 100%; font-size: 100px; background-color: whitesmoke;">
+		<div id="dataCarousel" class="carousel slide" style="height:100%;" data-ride="carousel" data-interval="false">
+			<div class="carousel-inner" style="padding: 3%; height: 100%;">
+			  <div class="carousel-item active" style="height: 100%;">
+				  <app-category-card [categoryData]="patients.activePatient.vmiData"></app-category-card>
+			  </div>
+			  <div class="carousel-item" style="height: 100%;">
+				<app-category-card [categoryData]="patients.activePatient.vpData"></app-category-card>
+			  </div>
+			  <div class="carousel-item" style="height: 100%;">
+				<app-category-card [categoryData]="patients.activePatient.mcData"></app-category-card>
+			  </div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+		  	<div class="modal-content">
+				<div class="modal-header">
+			  		<h5 class="modal-title" id="exampleModalLabel">New Evaluation</h5>
+			  		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+			  		</button>
+				</div>
+				<div class="modal-body">
+					<form [formGroup]="evalForm" autocomplete="off" (ngSubmit)="evalOnSubmit(evalForm.value)">
+						<div class="form-group">
+							<label for="">Visual Motor Integration</label><br>
+							<input type="text" class="form-control" placeholder="Enter Value" id="vmi" formControlName="vmi">
+						</div>
+						<div class="form-group">
+							<label for="">Visual Perception</label><br>
+							<input type="text" class="form-control" placeholder="Enter Value" id="vp" formControlName="vp">
+						</div>
+						<div class="form-group">
+							<label for="">Motor Control</label><br>
+							<input type="text" class="form-control" placeholder="Enter Value" id="mc" formControlName="mc">
+						</div>
+						<div class="form-group">
+							<label for="">When did you evaluate this patient? (Optional)</label><br>
+							<input type="date" class="form-control" id="newEvaldate" formControlName="newEvaldate" name="newEvaldate">
+						</div>
+						<button 
+							type="submit" 
+							class="btn btn-primary"
+							data-toggle="modal" 
+							data-target="#exampleModal"
+						>
+							Submit
+						</button>
+					</form>
+				</div>
+		 	</div>
+		</div>
+	</div>
+</div>

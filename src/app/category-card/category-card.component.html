@@ -1,0 +1,102 @@
+<div class="card" style="height: 100%; display: flex; flex-direction: row; justify-content: space-around; padding: 0; margin: 0; background-color: transparent; border: none;">
+	<div style="display: flex; flex-direction: column; margin-left: 20px; margin-right: 20px; flex: 1; justify-content: space-evenly;">
+		<div 
+			class="sticky-note-container"
+		>
+			<div 
+				class="card cardSize" 
+				[ngStyle]="{'background-color': stickyNoteStyles[0].color, 
+				'margin-bottom': stickyNoteStyles[0].vert, 
+				'margin-left': stickyNoteStyles[0].hori,
+				'transform': 'rotate('+stickyNoteStyles[0].angle+')'
+				}"
+			>
+				<div class="card-body cardFont">
+					<div style="font-weight: bold;">Raw Score:</div>
+					{{categoryData.rawScore}}
+				</div>
+			</div>
+		</div>
+		<div 
+			class="sticky-note-container"
+		>
+			<div 
+				class="card cardSize" 
+				[ngStyle]="{'background-color': stickyNoteStyles[1].color, 
+				'margin-bottom': stickyNoteStyles[1].vert, 
+				'margin-left': stickyNoteStyles[1].hori,
+				'transform': 'rotate('+stickyNoteStyles[1].angle+')'
+				}"
+			>
+				<div class="card-body cardFont">
+					<div style="font-weight: bold;">Age Equivalent:</div>
+					{{categoryData.ageEquivalent}}
+				</div>
+			</div>
+		</div>
+	</div>
+	<div style="display: flex; flex-direction: column; margin-left: 20px; margin-right: 20px; flex: 1; justify-content: space-evenly;">
+		<div class="sticky-note-container">
+			<div 
+				class="card cardSize" 
+				[ngStyle]="{'background-color': stickyNoteStyles[2].color, 
+				'margin-bottom': stickyNoteStyles[2].vert, 
+				'margin-left': stickyNoteStyles[2].hori,
+				'transform': 'rotate('+stickyNoteStyles[2].angle+')'
+				}"
+			>
+				<div class="card-body cardFont">
+					<div style="font-weight: bold;">Standard Score:</div>
+					{{categoryData.standardScore}}
+				</div>
+			</div>
+		</div>
+		<div class="sticky-note-container">
+			<div 
+				class="card cardSize" 
+				[ngStyle]="{'background-color': stickyNoteStyles[3].color, 
+				'margin-bottom': stickyNoteStyles[3].vert, 
+				'margin-left': stickyNoteStyles[3].hori,
+				'transform': 'rotate('+stickyNoteStyles[3].angle+')'
+				}"
+			>
+				<div class="card-body cardFont">
+					<div style="font-weight: bold;">Performance:</div>
+					{{categoryData.level}}
+				</div>
+			</div>
+		</div>
+	</div>
+	<div style="display: flex; flex-direction: column; margin-left: 20px; margin-right: 20px; flex: 1; justify-content: space-evenly;">
+		<div class="sticky-note-container">
+			<div 
+				class="card cardSize" 
+				[ngStyle]="{'background-color': stickyNoteStyles[4].color, 
+				'margin-bottom': stickyNoteStyles[4].vert, 
+				'margin-left': stickyNoteStyles[4].hori,
+				'transform': 'rotate('+stickyNoteStyles[4].angle+')'
+				}"
+			>
+				<div class="card-body cardFont">
+					<div style="font-weight: bold;">Percentile(%):</div>
+					{{categoryData.percentile}}
+				</div>
+			</div>
+		</div>
+		<div class="sticky-note-container">
+			<div 
+				class="card cardSize" 
+				[ngStyle]="{'background-color': stickyNoteStyles[5].color, 
+				'margin-bottom': stickyNoteStyles[5].vert, 
+				'margin-left': stickyNoteStyles[5].hori,
+				'transform': 'rotate('+stickyNoteStyles[5].angle+')'
+				}"
+			>
+				<div class="card-body cardFont">
+					<div style="font-weight: bold;">Scaled Score:</div>
+					{{categoryData.scaledScore}}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,97 @@
+:host {
+	color: #333;
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 8px 0;
+}
+
+p {
+	margin: 0;
+}
+
+.patients-container {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+.patient-list-container {
+	padding: 0;
+	width: 100%;
+	margin: 0;
+	overflow: scroll;
+	list-style-type: none;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	height: 100%;
+	background-color: whitesmoke;
+	padding-top: 20px;
+}
+
+.patient-item-container {
+	padding-left: 10px;
+	padding-right: 10px;
+	height: 200px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.select-patient {
+	flex: .8;
+	color: white;
+}
+
+.horizontal-list {
+	padding: 0;
+	width: 100%;
+	border-radius: 10px;
+	background-color: #1976d2;
+	display: flex;
+	align-items: center;
+	color: #eee;
+	font-size: 20px;
+	transition: 
+	margin-left .35s ease-in-out,
+	margin-right .35s ease-in-out,
+	padding-top .35s ease-in-out,
+	padding-bottom .35s ease-in-out,
+	filter .2s ease-in-out
+}
+
+.horizontal-list:hover {
+	margin-left: -10px;
+	margin-right: -10px;
+	padding-top: 12px;
+	padding-bottom: 12px;
+}
+
+.toolbarContainer {
+	width: 160px;
+	color: blue;
+	padding: 0;
+}
+
+.toolbarContainer:hover {
+	color: red;
+}
+
+.iconContainer {
+	flex: 1
+}
+
+.icon {
+	width: 100px;
+	filter: invert(100%);
+}
+

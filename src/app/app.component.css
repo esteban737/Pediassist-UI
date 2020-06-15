@@ -1,0 +1,42 @@
+.toolbar {
+	height: 120px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+	background-color: #1976d2;
+}
+
+.redirect {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+	margin-right: 30px;
+	cursor: pointer;
+}
+
+.redirect:hover {
+    color: 	#FFD700;
+}
+
+.icon {
+    width: 70px;
+    filter: invert(100%);
+}
+
+.cardSize {
+	box-shadow: 0 6px 6px -6px;
+	height: 50px; 
+	width: 50px; 
+}
+
+.cardSize:hover {
+	filter: brightness(130%);
+}
+
+.cardContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex: 1;
+}

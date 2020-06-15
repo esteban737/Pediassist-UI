@@ -1,0 +1,87 @@
+.iconContainer {
+	flex: .8;
+}
+
+.icon {
+	width: 100px;
+	filter: invert(100%);
+}
+
+.add-patient-container {
+	flex: .8;
+	display: flex;
+	justify-content: center;
+}
+
+.add-patient {
+	position: absolute;
+	height: 80px;
+	width: 80px;
+	margin-left: 40px;
+	top: 140px;
+	border-radius: 40px;
+	color: #1976d2;
+}
+
+.add-patient:hover {
+	z-index: 10;
+	padding: 10px;
+}
+
+.label-item-container {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	justify-content: center;
+}
+
+.patient-list-container {
+	padding: 0;
+	flex: 1;
+	list-style-type: none;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.patient-item-container {
+	flex: 1;
+	height: 150px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.horizontal-list {
+	padding: 0;
+	margin-bottom: 10px;
+	border-radius: 10px;
+	display: flex;
+	align-items: center;
+}
+
+.patients-container {
+	margin: auto;
+	height: 100%;
+	width: 96%;
+	display: flex;
+	flex-direction: column;
+}
+
+.button-container {
+	display: flex;
+	justify-content: flex-end;
+	width: 100%;
+	background-color: red;
+}
+
+.table-lables {
+	display: flex;
+	font-size: 20px;
+	align-items: center;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+}

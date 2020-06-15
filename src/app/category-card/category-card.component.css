@@ -1,0 +1,20 @@
+.sticky-note-container {
+	flex: 1; 
+	display: flex; 
+	justify-content: center; 
+	align-items: center;
+}
+
+.cardSize {
+	box-shadow: 0 6px 6px -6px;
+	height: 20vh; 
+	width: 20vh; 
+}
+
+.cardSize:hover {
+	filter: brightness(130%);
+}
+
+.cardFont {
+	font-size: 16px;
+}
